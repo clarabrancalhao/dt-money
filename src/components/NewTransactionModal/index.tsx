@@ -40,6 +40,7 @@ export const NewTransactionModal = ({
           <RadioBox
             type="button"
             isActive={type === "deposit"}
+            activeColor="green"
             onClick={() => {
               setType("deposit");
             }}
@@ -50,6 +51,7 @@ export const NewTransactionModal = ({
           <RadioBox
             type="button"
             isActive={type === "withdraw"}
+            activeColor="red"
             onClick={() => {
               setType("withdraw");
             }}
