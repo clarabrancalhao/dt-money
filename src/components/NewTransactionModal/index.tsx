@@ -4,6 +4,7 @@ import closeModalImg from "../../assets/close.svg";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
 import { FormEvent, useState } from "react";
+import { api } from "../../services/api";
 
 Modal.setAppElement("#root");
 
@@ -23,6 +24,14 @@ export const NewTransactionModal = ({
 
   const handleFormSubmit = (event: FormEvent) => {
     event.preventDefault();
+
+    const data = {
+      title,
+      value,
+      category,
+    };
+
+    api.post("/transactions", data);
   };
 
   return (
